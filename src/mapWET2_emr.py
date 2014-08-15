@@ -52,9 +52,13 @@ domain = None
 text = ''
 #read in the word to stem dictionary
 #word_stem_map is used as global
+# Note: Next three lines need to be changed to access wordStemMap.txt from local dir
+# Replace lines with file read
+# file is no longer available at this S3 address
 opener = urllib.URLopener()
 myurl = "https://s3.amazonaws.com/ucsc-project/ccc/wordStemMap.txt"
 myfile = opener.open(myurl)
+#
 word_stem_map = {}
 for line in myfile:
     line = line.strip()
